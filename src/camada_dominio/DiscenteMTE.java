@@ -11,9 +11,9 @@ public class DiscenteMTE {
 	
 	public static Resultset getInfoIRAeDisciplinasC(Resultset rs, double disciplinasC, double IRA) {
 		
-		// 1.2.3
+		// 1.2.1
 		if (disciplinasC >= 80 && IRA >= 6) {
-			// rs.getInfoIRAeDisciplinasC()
+			rs.getInfoIRAeDisciplinasC();
 		}
 		return rs;
 	}
