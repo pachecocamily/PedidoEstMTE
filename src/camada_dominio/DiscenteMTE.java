@@ -9,12 +9,14 @@ import entidades.result_set.Tabela;
 
 public class DiscenteMTE {
 	
-	public static Resultset getInfoIRAeDisciplinasC(Resultset rs, double disciplinasC, double IRA) {
-		
-		// 1.2.1
-		if (disciplinasC >= 80 && IRA >= 6) {
-			rs.getInfoIRAeDisciplinasC();
+	public static Resultset getRegrasDoDis(Resultset rs, double disciplinasC, double IRA) {
+			
+			if(disciplinasC >= 80 && IRA >= 6) {
+				rs.set("regras", true);
+			}
+				
+			return rs;
 		}
-		return rs;
-	}
+
+	
 }

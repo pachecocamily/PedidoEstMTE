@@ -5,8 +5,8 @@ import java.util.Iterator;
 import java.util.Map;
 
 import entidades.Linha;
-import entidades.Tabela;
 import entidades.TabelaPedido;
+import entidades.TabelaDiscente;
 
 public class Resultset {
 
@@ -28,10 +28,19 @@ public class Resultset {
 		Tabela tabela = getTabela(nomeTabela);
 		return tabela.iterador();
 	}
-
-	private void getInfoIRAeDisciplinasC(double IRA, double disciplinasC) {
-		TabelaPedido pedido = (TabelaPedido)tabelas.get("IRA");
-//		Linha linhaUnica = pedido.getLinha(0); 
-//		linhaUnica.setValor("", false);	
+	
+	// métodos
+	
+	private void setRegrasDoDis(boolean regrasDoDis) {
+		TabelaDiscente discente = (TabelaDiscente)tabelas.get("discente");
+		Linha linhaUnica = discente.getLinha(0);
+		linhaUnica.setValor("regrasDoDis", regrasDoDis);
+		
 	};
+	
+	public void set(String regras, boolean atendeRequisito) {
+		if (atendeRequisito) {
+            setRegrasDoDis(true);
+		}
+	}
 }
